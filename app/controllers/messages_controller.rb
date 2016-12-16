@@ -1,11 +1,14 @@
 class MessagesController < ApplicationController
-	before_action :message_params, only: [:create];
+	
 	def index
-
+		@messages = Message.all.order("created_at DESC")
 	end
 
 	def new
 		@message = Message.new
+	end
+	def show
+		@message = Message.find(params[:id])
 	end
 
 	def create
