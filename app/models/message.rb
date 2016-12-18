@@ -1,4 +1,4 @@
 class Message < ActiveRecord::Base
 	belongs_to :user
-	has_many :commet
+	has_many :comment
 end
